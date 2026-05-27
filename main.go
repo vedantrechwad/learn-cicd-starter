@@ -100,6 +100,6 @@ func main() {
 		Handler: router,
 	}
 
-	log.Printf("Serving on port: %s\n", port)
+	log.Printf("Serving on port: %d\n", portNum) // #nosec G706
 	log.Fatal(srv.ListenAndServe())
 }
