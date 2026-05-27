@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/go-chi/chi"
@@ -96,9 +97,9 @@ func main() {
 
 	router.Mount("/v1", v1Router)
 	srv := &http.Server{
-	Addr:              ":" + port,
-	Handler:           router,
-	ReadHeaderTimeout: 5 * time.Second,
+		Addr:              ":" + port,
+		Handler:           router,
+		ReadHeaderTimeout: 5 * time.Second,
 	}
 
 	log.Println("Serving on port:", port)
